@@ -31,5 +31,14 @@ public class Word2vec {
             Collection<String> lst = vec.wordsNearest(w, 2);
             System.out.println("2 Words closest to '" + w + "': " + lst);
         }
+        System.out.println();
+
+        String tw = "nice";
+        Collection<String> wordsNearest = vec.wordsNearest(tw, 3);
+        System.out.println(tw + " -> " + wordsNearest);
+        for (String wn : wordsNearest) {
+            double similarity = vec.similarity(tw, wn);
+            System.out.println("sim(" + tw + "," + wn + ") : " + similarity);
+        }
     }
 }
